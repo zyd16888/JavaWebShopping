@@ -19,6 +19,15 @@ public class RegServlet extends HttpServlet {
 	private UserDao dao =  new UserDaoImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//解决响应时的乱码
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		//解决post请求时的乱码
+		request.setCharacterEncoding("utf-8");
+		
+		
+		
+		
 		//获取表单中提交的数据
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -42,13 +51,16 @@ public class RegServlet extends HttpServlet {
 		 user.setState(0); //账号状态：0未激活  1激活
 		 
 		 
-		 //对象报错到数据库中
+		 //对象报存到数据库中
 		 int num = dao.saveUser(user);
 		 
 		 if(num == 0) {
 			 System.out.println("注册失败");
 		 }else {
-			System.out.println("注册成功");
+			//跳转到登陆界面
+			 System.out.println("注册成功");
+			 System.out.println(user.getName().toString());
+			 response.sendRedirect("login.htm");
 		}
 	}
 
