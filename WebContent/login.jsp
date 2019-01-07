@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
-	<head></head>
+<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>会员登录</title>
@@ -27,18 +27,14 @@
  }
  
 font {
-    color: #3164af;
-    font-size: 18px;
+    color: #666;
+    font-size: 22px;
     font-weight: normal;
-    padding: 0 10px;
+    padding-right:17px;
 }
  </style>
 </head>
 <body>
-
-
-
-
 			<!--
             	描述：菜单栏
             -->
@@ -93,82 +89,50 @@ font {
 				</nav>
 			</div>
 
-
-
-
-
-<div class="container" style="width:100%;background:url('image/regist_bg.jpg');">
+	
+	
+	
+	
+	
+	
+<div class="container"  style="width:100%;height:460px;background:#FF2C4C url('images/loginbg.jpg') no-repeat;">
 <div class="row"> 
-
-	<div class="col-md-2"></div>
-
-	<div class="col-md-8" style="background:#fff;padding:40px 80px;margin:30px;border:7px solid #ccc;">
-		<font>会员注册</font>USER REGISTER
-		<form class="form-horizontal" style="margin-top:5px;" action="user?method=reg" method="post">
-			 <div class="form-group">
-			    <label for="username" class="col-sm-2 control-label">用户名</label>
-			    <div class="col-sm-6">
-			      <input type="text" class="form-control" id="username" placeholder="请输入用户名" name = "username">
-			    </div>
-			  </div>
-			   <div class="form-group">
-			    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
-			    <div class="col-sm-6">
-			      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码" name="password">
-			    </div>
-			  </div>
-			   <div class="form-group">
-			    <label for="confirmpwd" class="col-sm-2 control-label">确认密码</label>
-			    <div class="col-sm-6">
-			      <input type="password" class="form-control" id="confirmpwd" placeholder="请输入确认密码" name="confirmpwd">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			    <div class="col-sm-6">
-			      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
-			    </div>
-			  </div>
-			 <div class="form-group">
-			    <label for="usercaption" class="col-sm-2 control-label">姓名</label>
-			    <div class="col-sm-6">
-			      <input type="text" class="form-control" id="usercaption" placeholder="请输入姓名" name="name">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="usercaption" class="col-sm-2 control-label">手机号</label>
-			    <div class="col-sm-6">
-			      <input type="text" class="form-control" id="usercaption" placeholder="请输手机号" name="telephone">
-			    </div>
-			  </div>
-			  <div class="form-group opt">  
-			  <label for="inlineRadio1" class="col-sm-2 control-label">性别</label>  
-			  <div class="col-sm-6">
-			    <label class="radio-inline">
-			  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="female" checked="checked"> 男
-			</label>
-			<label class="radio-inline">
-			  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="male"> 女
-			</label>
-			</div>
-			  </div>		
-			  
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <input type="submit"  width="100" value="注册" name="submit" border="0"
-				    style="background: url('./images/register.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-				    height:35px;width:100px;color:white;">
-			    </div>
-			    ${msg}
-			  </div>
-			</form>
+	<div class="col-md-7">
+		<!--<img src="./image/login.jpg" width="500" height="330" alt="会员登录" title="会员登录">-->
 	</div>
 	
-	<div class="col-md-2"></div>
+	<div class="col-md-5">
+				<div style="width:440px;border:1px solid #E7E7E7;padding:20px 0 20px 30px;border-radius:5px;margin-top:60px;background:#fff;">
+				<font>会员登录</font>USER LOGIN
+
+				<div>&nbsp;</div>
+<form class="form-horizontal" action="user?method=login" method="post">
   
+ <div class="form-group">
+    <label for="username" class="col-sm-2 control-label">用户名</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+    <div class="col-sm-6">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <input type="submit"  width="100" value="登录" name="submit" border="0"
+    style="background: url('./images/login.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height:35px;width:100px;color:white;">
+    </div>
+  </div>
+</form>
+</div>			
+	</div>
 </div>
-</div>
-	  
+</div>	
+
 		<div style="text-align: center;margin-top: 5px;">
 			<ul class="list-inline">
 				<li><a>关于我们</a></li>
@@ -183,11 +147,6 @@ font {
 			</ul>
 		</div>
 		<div style="text-align: center;margin-top: 5px;margin-bottom:20px;">
-			Copyright &copy;2016-2017 翡翠教育 版权所有
+			Copyright &copy; 2016-2017 翡翠教育 版权所有
 		</div>
-
 </body></html>
-
-
-
-
