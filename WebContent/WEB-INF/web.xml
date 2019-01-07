@@ -11,12 +11,21 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>RegServlet</display-name>
-    <servlet-name>RegServlet</servlet-name>
-    <servlet-class>com.singlelovely.controller.RegServlet</servlet-class>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.singlelovely.controller.UserServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>RegServlet</servlet-name>
-    <url-pattern>/reg</url-pattern>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>EncodingFilter</display-name>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.singlelovely.filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
