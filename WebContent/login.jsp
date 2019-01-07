@@ -111,13 +111,13 @@ font {
  <div class="form-group">
     <label for="username" class="col-sm-2 control-label">用户名</label>
     <div class="col-sm-6">
-      <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+      <input type="text" class="form-control" id="username" placeholder="请输入用户名" name = "username" >
     </div>
   </div>
    <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
     <div class="col-sm-6">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码" name = "password">
     </div>
   </div>
   <div class="form-group">
@@ -126,6 +126,7 @@ font {
     style="background: url('./images/login.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0);
     height:35px;width:100px;color:white;">
     </div>
+    ${msg}
   </div>
 </form>
 </div>			
