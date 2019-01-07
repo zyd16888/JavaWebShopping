@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.eclipse.jdt.internal.compiler.parser.RecoveredRequiresStatement;
 
@@ -70,12 +71,13 @@ public class UserServlet extends HttpServlet {
 			 request.setAttribute("msg", "注册失败");//向请求中设置参数
 			 RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
 			 dispatcher.forward(request, response);
-			 
+			 return;
 		 }else {
 			//跳转到登陆界面
 			 System.out.println("注册成功");
 			 System.out.println(user.getName().toString());
 			 response.sendRedirect("login.jsp");
+			 return;
 		}
 	}
 	
@@ -94,8 +96,13 @@ public class UserServlet extends HttpServlet {
 					request.getRequestDispatcher("login.jsp").forward(request, response);
 					return;
 				}else {
-				System.out.println("登陆成功");
-					response.sendRedirect("index.jsp");
+					System.out.println("登陆成功");
+					//登陆的用户对象存放到session中
+					HttpSession session = request.getSession();
+					session.setAttribute("user", user);
+					
+					response.sendRedirect("index");
+					return;
 				}
 			
 			
