@@ -2,6 +2,7 @@ package com.singlelovely.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.singlelovely.dao.UserDao;
@@ -51,6 +52,61 @@ public class UserDaoImpl implements UserDao{
 		
 		
 		return num;
+	}
+
+	@Override
+	public User login(String username, String password) {
+		//System.out.println(username+" u + p "+password); 查看传值
+		//创建实体类对象
+		User user =  null;
+		Connection conn = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			conn = DBUtils.getConnection();
+			String sql = "select * from user where username=? and password=?";
+			pst =   (PreparedStatement) DBUtils.getPst(conn, sql);
+			pst.setString(1, username);
+			pst.setString(2,password);
+			
+			rs = pst.executeQuery();
+			if (rs.next()) {
+				String uid = rs.getString(1);
+				String uname = rs.getString(2);
+				String pass = rs.getString(3);
+				String name = rs.getString(4);
+				String photo = rs.getString(5);
+				String email = rs.getString(6);
+				String telephone = rs.getString(7);
+				String birthday = rs.getString(8);
+				String sex = rs.getString(9);
+				int state = rs.getInt(10);
+				String code = rs.getString(11);
+				
+				user = new User();
+
+				user.setUid(uid);
+				user.setUsername(uname);
+				user.setPassword(pass);
+				user.setPhoto(photo);
+				user.setName(name);
+				user.setEmail(email);
+				user.setTelephone(telephone);
+				user.setBirthday(birthday);
+				user.setSex(sex);
+				user.setState(state);
+				user.setCode(code);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			DBUtils.close(rs, pst, conn);
+		}
+		return user;
 	}
 
 }
