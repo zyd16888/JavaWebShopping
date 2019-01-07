@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <!-- 将jstl的核心标签库引入到当前页面 -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -24,8 +26,9 @@
 				</div>
 				<div class="col-md-3" style="padding-top:20px">
 					<ol class="list-inline">
-						<li><a href="login.htm">登录</a></li>
-						<li><a href="register.htm">注册</a></li>
+						<li>${user.username}</li>
+						<li><a href="login.jsp">登录</a></li>
+						<li><a href="register.jsp">注册</a></li>
 						<li><a href="cart.htm">购物车</a></li>
 					</ol>
 				</div>
@@ -130,77 +133,16 @@
 							<img src="products/hao/middle01.jpg" width="516px" height="200px" style="display: inline-block;">
 						</a>
 					</div>
-				
+				<c:forEach items="${list}" var="product">
 					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
 						<a href="product_info.htm">
-							<img src="products/hao/wg01.jpg" width="130" height="130" style="display: inline-block;">
+							<img src="${product.pimage}" width="130" height="130" style="display: inline-block;">
 						</a>
-						<p><a href="product_info.html" style='color:#666'>手机</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;1299.00</font></p>
+						<p><a href="product_info.html" style='color:#666'>${product.pname}</a></p>
+						<p><font color="#E4393C" style="font-size:16px">&yen;${product.shopPrice}</font></p>
 					</div>
-	
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/wg05.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>电脑</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;2299.00</font></p>
-					</div>
-
-					<div class="col-md-2 yes-right-border" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/small08.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>电炖锅</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;299.00</font></p>
-					</div>
+				</c:forEach>
 					
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/wg07.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>mk包</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;11299.00</font></p>
-					</div>
-	
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/wg08.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>电动车</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;2299.00</font></p>
-					</div>
-
-					<div class="col-md-2 yes-right-border" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/wg06.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>干果</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;99.00</font></p>
-					</div>
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/small10.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>手机</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;1111.00</font></p>
-					</div>
-	
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/wg09.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>电动小汽车</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;2299.00</font></p>
-					</div>
-
-					<div class="col-md-2" style="text-align:center;height:200px;padding:10px 0px;">
-						<a href="product_info.htm">
-							<img src="products/hao/small05.jpg" width="130" height="130" style="display: inline-block;">
-						</a>
-						<p><a href="product_info.html" style='color:#666'>液压机</a></p>
-						<p><font color="#E4393C" style="font-size:16px">&yen;299.00</font></p>
-					</div>
 				</div>
 			</div>
 			<!--
