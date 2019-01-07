@@ -80,8 +80,29 @@ public class UserServlet extends HttpServlet {
 	}
 	
 	public void login(HttpServletRequest request, HttpServletResponse response) {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		try {
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+		
+			//数据库查询
+			User user = dao.login(username, password);
+			
+			//判断是否登陆成功
+			if(user == null) {
+					System.out.println("登陆失败");
+					request.setAttribute("msg", "用户名或者密码错误");
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+					return;
+				}else {
+				System.out.println("登陆成功");
+					response.sendRedirect("index.jsp");
+				}
+			
+			
+			} catch (ServletException | IOException e) {
+				
+				e.printStackTrace();
+			}
 	}
 	
 	
