@@ -125,4 +125,62 @@ public class ProductDaoImpl implements ProductDao {
 		return list;
 	}
 
+	@Override
+	public Product findProductByPid(String pid) {
+		Product p = new Product();
+		Connection conn = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+	 	try {
+	 		conn = DBUtils.getConnection();
+			String sql = "select * from product where pid = ?";
+			pst = (PreparedStatement) DBUtils.getPst(conn, sql);
+			
+			pst.setString(1, pid);
+			rs = pst.executeQuery();
+			
+			while (rs.next()) {
+				String ppid = rs.getString(1);
+				String pname = rs.getString(2);
+				double marketPrice = rs.getDouble(3);
+				double shopPrice = rs.getDouble(4);
+				String pimage = rs.getString(5);
+				String pdate = rs.getString(6);
+				int isHot = rs.getInt(7);
+				String pdesc = rs.getString(8);
+				int pflag = rs.getInt(9);
+				String id = rs.getString(10);
+				
+				//Product p = new Product();
+				
+				//set ·½·¨
+				
+				p.setPid(ppid);
+				p.setPname(pname);
+				p.setMarketPrice(marketPrice);
+				p.setShopPrice(shopPrice);
+				p.setPimage(pimage);
+				p.setPdate(pdate);
+				p.setIsHot(isHot);
+				p.setPdesc(pdesc);
+				p.setPflag(pflag);
+				p.setCid(id);
+				
+			}
+			
+			
+			
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			DBUtils.close(rs, pst, conn);
+		}		
+		
+		return p;
+	}
+
+	
+
 }

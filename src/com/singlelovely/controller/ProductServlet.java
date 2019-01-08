@@ -20,11 +20,25 @@ public class ProductServlet extends HttpServlet {
 		if (method.equals("findProductListByCid")) {
 			String cid = request.getParameter("cid");
 			findProductListByCid(request,response,cid);
+		}else if (method.equals("findProductByPid")) {
+			String pid = request.getParameter("pid");
+			findProductByPid(request,response,pid);
 		}
 		
 	}
 
 	
+	private void findProductByPid(HttpServletRequest request, HttpServletResponse response, String pid) throws ServletException, IOException {
+		//根据cid查询数据库
+		Product product = dao.findProductByPid(pid);
+		//将商品信息存放到request域
+		request.setAttribute("productPid", product);
+		//跳转到product_info页面
+		request.getRequestDispatcher("product_info.jsp").forward(request, response);
+		return;
+	}
+
+
 	public void findProductListByCid(HttpServletRequest request, HttpServletResponse response, String cid) throws ServletException, IOException {
 		
 		//根据cid查询数据库

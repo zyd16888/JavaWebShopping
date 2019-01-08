@@ -18,4 +18,11 @@ public interface ProductDao {
 	 * @return
 	 */
 	public List<Product> findProductListByCid(String cid);
+	
+	/**
+	 * 	根据pid查询商品信息
+	 * @param pid
+	 * @return
+	 */
+	public Product findProductByPid(String pid);
 }
