@@ -31,9 +31,9 @@ public class DBUtils {
 	
 	//获取与数据库的链接
 	public static Connection getConnection() {
-		String url = "jdbc:mysql://localhost:3306/shopping?useUnicode=true&characterEncoding=utf-8&useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/store?useUnicode=true&characterEncoding=utf-8&useSSL=false";
 		String user = "root";
-		String password = "475182659";
+		String password = "1019678874";
 		Connection conn = null;
 		
 		try {

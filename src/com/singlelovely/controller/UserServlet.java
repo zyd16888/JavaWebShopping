@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.eclipse.jdt.internal.compiler.parser.RecoveredRequiresStatement;
-
 import com.singlelovely.dao.UserDao;
 import com.singlelovely.dao.impl.UserDaoImpl;
 import com.singlelovely.entity.User;
@@ -106,8 +104,9 @@ public class UserServlet extends HttpServlet {
 				}
 			
 			
-			} catch (ServletException | IOException e) {
-				
+			} catch (ServletException e) {
+				e.printStackTrace();
+			}catch(IOException e){
 				e.printStackTrace();
 			}
 	}
