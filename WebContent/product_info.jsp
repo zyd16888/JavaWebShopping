@@ -60,14 +60,17 @@
 							<div style="margin:10px 0 10px 0;">促销: <a target="_blank" title="限时抢购 (2014-07-30 ~ 2015-01-01)" style="background-color: #f07373;">限时抢购</a> </div>
 	
 							<div style="padding:10px;border:1px solid #e7dbb1;width:330px;margin:15px 0 10px 0;;background-color: #fffee6;">
-	
-								<div style="border-bottom: 1px solid #faeac7;margin-top:20px;padding-left: 10px;">购买数量:
-									<input id="quantity" name="count" value="1" maxlength="4" size="10" type="text"> </div>
-	
-								<div style="margin:20px 0 10px 0;;text-align: center;">
-									<a href="cart.htm">
-										<input style="background: url('./images/product.gif') no-repeat scroll 0 -600px rgba(0, 0, 0, 0);height:36px;width:127px;" value="加入购物车" type="submit">
-									</a></div>
+								<form action="cart?method=addCart" method="post">
+									<div style="border-bottom: 1px solid #faeac7;margin-top:20px;padding-left: 10px;">购买数量:
+										<input id="quantity" name="count" value="1" maxlength="4" size="10" type="text"> </div>
+										<input type="hidden" name="pid" value="${productPid.pid }">
+									<div style="margin:20px 0 10px 0;;text-align: center;">
+										<a href="cart.htm">
+											<input style="background: url('./images/product.gif') no-repeat scroll 0 -600px rgba(0, 0, 0, 0);height:36px;width:127px;" value="加入购物车" type="submit">
+										</a>
+									</div>
+								</form>
+								
 							</div>
 						</div>
 					</div>
