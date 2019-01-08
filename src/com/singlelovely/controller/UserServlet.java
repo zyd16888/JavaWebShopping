@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.eclipse.jdt.internal.compiler.parser.RecoveredRequiresStatement;
+//import org.eclipse.jdt.internal.compiler.parser.RecoveredRequiresStatement;
 
 import com.singlelovely.dao.UserDao;
 import com.singlelovely.dao.impl.UserDaoImpl;
