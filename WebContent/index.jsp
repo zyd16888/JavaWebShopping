@@ -17,22 +17,7 @@
 <body>
 	<div class="container-fluid">
 
-		<!--
-            	描述：菜单栏
-            -->
-		<div class="container-fluid">
-			<div class="col-md-4">
-				<img src="img/logo3.png" />
-			</div>
-			<div class="col-md-3" style="padding-top: 20px">
-				<ol class="list-inline">
-					<li>${user.username}</li>
-					<li><a href="login.jsp">登录</a></li>
-					<li><a href="register.jsp">注册</a></li>
-					<li><a href="cart.htm">购物车</a></li>
-				</ol>
-			</div>
-		</div>
+
 		<!-- 引入头部页面 -->
 		<jsp:include page="header.jsp"></jsp:include>
 
